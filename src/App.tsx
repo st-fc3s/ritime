@@ -121,6 +121,20 @@ export default function App() {
         }
       }
     }));
+
+    // Also clear custom subjects from the pool for this faculty/semester/year
+    setSubjectPool(prev => {
+      const newPool = { ...prev };
+      if (newPool[year]?.[semester]?.[faculty]) {
+        const facultyPool = { ...newPool[year][semester][faculty] };
+        Object.keys(facultyPool).forEach(key => {
+          // Keep only non-custom (preset) subjects
+          facultyPool[key] = facultyPool[key].filter(s => !s.isCustom);
+        });
+        newPool[year][semester][faculty] = facultyPool;
+      }
+      return newPool;
+    });
   };
 
   // Cell-specific subject pools (nested by year and faculty)
@@ -129,66 +143,35 @@ export default function App() {
     return saved ? JSON.parse(saved) : {};
   });
 
+  // Persist subjectPool
+  useEffect(() => {
+    localStorage.setItem('subjectPool', JSON.stringify(subjectPool));
+  }, [subjectPool]);
+
+  // Initialize subjectPool with presets if empty
   useEffect(() => {
     setSubjectPool(prev => {
+      const newPool = { ...prev };
       let updated = false;
-      const newPool = JSON.parse(JSON.stringify(prev));
 
-      YEARS.forEach(y => {
-        if (!newPool[y]) {
-          newPool[y] = {};
-          updated = true;
-        }
-        
-        (['Spring', 'Fall'] as Semester[]).forEach(s => {
-          if (!newPool[y][s]) {
-            newPool[y][s] = {};
-            updated = true;
-          }
-          
-          FACULTIES.forEach((f) => {
-            if (!newPool[y][s][f]) {
-              newPool[y][s][f] = {};
-              updated = true;
-            }
+      Object.entries(ALL_YEAR_SUBJECT_PRESETS).forEach(([y, faculties]) => {
+        const yearName = y as Year;
+        Object.entries(faculties).forEach(([f, semesters]) => {
+          const facultyName = f as Faculty;
+          Object.entries(semesters).forEach(([s, cells]) => {
+            const semesterName = s as Semester;
             
-            for (let d = 0; d < 5; d++) {
-              for (let p = 0; p < 7; p++) {
-                const key = `${d}-${p}`;
-                
-                // 1. 現在のプールから「ユーザーが自分で追加した授業(isCustom)」だけを抽出
-                const currentPool = newPool[y][s][f][key] || [];
-                const customSubjects = currentPool.filter((subj: Subject) => subj.isCustom);
-                
-                // 2. プログラム側の最新プリセットを取得
-                const yearPresets = ALL_YEAR_SUBJECT_PRESETS[y];
-                const periodPresets = yearPresets?.[f]?.[s]?.[d.toString()]?.[p.toString()] || [];
-                
-                // 3. プリセットに色を割り当て
-                const coloredPresets = periodPresets.map((preset, idx) => ({
-                  ...preset,
-                  color: SUBJECT_COLORS[idx % SUBJECT_COLORS.length].name,
-                  isCustom: false
-                }));
-
-                // 4. 「カスタム授業」 + 「最新プリセット」 でプールを再構築
-                const nextPool = [...customSubjects, ...coloredPresets];
-                
-                // 変更があるかチェック
-                if (JSON.stringify(currentPool) !== JSON.stringify(nextPool)) {
-                  newPool[y][s][f][key] = nextPool;
-                  updated = true;
-                }
-              }
+            if (!newPool[yearName]?.[semesterName]?.[facultyName]) {
+              if (!newPool[yearName]) newPool[yearName] = {};
+              if (!newPool[yearName][semesterName]) newPool[yearName][semesterName] = {};
+              newPool[yearName][semesterName][facultyName] = cells;
+              updated = true;
             }
           });
         });
       });
 
-      if (updated) {
-        return newPool;
-      }
-      return prev;
+      return updated ? newPool : prev;
     });
   }, []);
 
@@ -272,7 +255,14 @@ export default function App() {
                 
                 // 1. 現在のプールから「ユーザーが自分で追加した授業(isCustom)」だけを抽出
                 const currentPool = newPool[y][s][f][key] || [];
-                const customSubjects = currentPool.filter((subj: Subject) => subj.isCustom);
+                const placedSubject = timetableData[y]?.[s]?.[f]?.[key];
+                
+                const customSubjects = currentPool.filter((subj: Subject) => {
+                  if (!subj.isCustom) return false;
+                  // 配置されているか、または今まさに選択中である場合は残す
+                  const isPlaced = placedSubject && placedSubject.isCustom && placedSubject.code === subj.code && placedSubject.name === subj.name;
+                  return isPlaced;
+                });
                 
                 // 2. プログラム側の最新プリセットを取得
                 const yearPresets = ALL_YEAR_SUBJECT_PRESETS[y];
@@ -538,7 +528,9 @@ useEffect(() => {
               ...(prev[year]?.[semester] || {}),
               [faculty]: {
                 ...(prev[year]?.[semester]?.[faculty] || {}),
-                [key]: (prev[year]?.[semester]?.[faculty]?.[key] || []).filter(s => s.code !== previousSubject.code)
+                [key]: (prev[year]?.[semester]?.[faculty]?.[key] || []).filter(s => 
+                  !(s.isCustom && s.code === previousSubject.code && s.name === previousSubject.name)
+                )
               }
             }
           }
@@ -591,7 +583,9 @@ useEffect(() => {
               ...(prev[year]?.[semester] || {}),
               [faculty]: {
                 ...(prev[year]?.[semester]?.[faculty] || {}),
-                [key]: (prev[year]?.[semester]?.[faculty]?.[key] || []).filter(s => s.code !== subject.code)
+                [key]: (prev[year]?.[semester]?.[faculty]?.[key] || []).filter(s => 
+                  !(s.isCustom && s.code === subject.code && s.name === subject.name)
+                )
               }
             }
           }
@@ -1850,7 +1844,9 @@ useEffect(() => {
                                   ...(prev[year]?.[semester] || {}),
                                   [faculty]: {
                                     ...(prev[year]?.[semester]?.[faculty] || {}),
-                                    [key]: (prev[year]?.[semester]?.[faculty]?.[key] || []).filter(s => s.code !== previousSubject.code)
+                                    [key]: (prev[year]?.[semester]?.[faculty]?.[key] || []).filter(s => 
+                                      !(s.isCustom && s.code === previousSubject.code && s.name === previousSubject.name)
+                                    )
                                   }
                                 }
                               }
@@ -1875,4 +1871,3 @@ useEffect(() => {
     </div>
   );
 }
-
