@@ -286,7 +286,7 @@ export default function App() {
       return newPool;
     });
     
-    alert('データベースを最新の状態に同期しました。\n（プログラムから削除された古いデータは消去されました）');
+    // alert('データベースを最新の状態に同期しました。\n（プログラムから削除された古いデータは消去されました）');
   };
 
     const handleRefreshApp = () => {
