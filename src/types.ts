@@ -9,15 +9,6 @@ export type Theme = 'light' | 'dark' | 'system';
 
 export type Faculty = '経営学部' | '政策科学部' | '総合心理学部' | 'グローバル教養学部' | '映像学部' | '情報理工学部';
 
-export const FACULTY_ABBR: Record<Faculty, string> = {
-  '経営学部': '経営',
-  '政策科学部': '政策',
-  '総合心理学部': '総心',
-  'グローバル教養学部': 'グロ教',
-  '映像学部': '映像',
-  '情報理工学部': '情理'
-};
-
 export interface Subject {
   code: string;
   name: string;
