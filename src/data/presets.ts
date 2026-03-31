@@ -17,10 +17,11 @@ import { presets as presets26JohoFall } from './presets/Joho/26JohoFall';
 /**
  * 年度設定
  */
-export const YEARS: Year[] = ['2026'
-  ,'2027'
-  ,'2028'
-  ,'2029'
+export const YEARS: Year[] = ['2025'
+  ,'2026'
+  // ,'2027'
+  // ,'2028'
+  // ,'2029'
 ];
 
 /**
@@ -40,6 +41,7 @@ export const FACULTIES: Faculty[] = [
  * 構造: 年度 -> 学部 -> セメスター -> 曜日 -> 時限 -> 教科リスト
  */
 export const ALL_YEAR_SUBJECT_PRESETS: Record<Year, Record<Faculty, Record<Semester, FacultyTimetablePresets>>> = {
+  '2025': {} as any, 
   '2026': {
     '経営学部': {
       'Spring': presets26KeieiSpring,
@@ -66,9 +68,9 @@ export const ALL_YEAR_SUBJECT_PRESETS: Record<Year, Record<Faculty, Record<Semes
       'Fall': presets26JohoFall
     }
   }
-  ,'2027': {} as any
-  ,'2028': {} as any
-  ,'2029': {} as any
+  // ,'2027': {} as any
+  // ,'2028': {} as any
+  // ,'2029': {} as any
 };
 
 /**

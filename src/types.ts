@@ -1,5 +1,10 @@
 export type Semester = 'Spring' | 'Fall';
-export type Year = '2026' | '2027' | '2028' | '2029';
+export type Year = '2025' 
+| '2026' 
+// | '2027' 
+// | '2028' 
+// | '2029'
+;
 export type Theme = 'light' | 'dark' | 'system';
 
 export type Faculty = '経営学部' | '政策科学部' | '総合心理学部' | 'グローバル教養学部' | '映像学部' | '情報理工学部';
