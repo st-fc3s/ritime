@@ -299,7 +299,7 @@ export default function App() {
       return prev;
     });
     
-    alert('データベースを最新の状態に更新しました。');
+    alert('授業リストを最新の状態に更新しました。');
   };
 
   const handleImport = (e: React.ChangeEvent<HTMLInputElement>) => {
