@@ -131,69 +131,47 @@ export default function App() {
 
   // Initialize sample data for all years, semesters, faculties and cells
   useEffect(() => {
-    setSubjectPool(prev => {
-      let updated = false;
-      const newPool = JSON.parse(JSON.stringify(prev)); // Deep clone to avoid direct state mutation
+    const savedPool = localStorage.getItem('subjectPool');
+    if (savedPool) return; // Don't overwrite if we have saved data
 
-      YEARS.forEach(y => {
-        if (!newPool[y]) {
-          newPool[y] = {};
-          updated = true;
-        }
+    const initialPool: SubjectPool = {};
+    
+    YEARS.forEach(y => {
+      initialPool[y] = {};
+      
+      (['Spring', 'Fall'] as Semester[]).forEach(s => {
+        initialPool[y][s] = {};
         
-        (['Spring', 'Fall'] as Semester[]).forEach(s => {
-          if (!newPool[y][s]) {
-            newPool[y][s] = {};
-            updated = true;
-          }
+        FACULTIES.forEach((f) => {
+          initialPool[y][s][f] = {};
           
-          FACULTIES.forEach((f) => {
-            if (!newPool[y][s][f]) {
-              newPool[y][s][f] = {};
-              updated = true;
-            }
-            
-            for (let d = 0; d < 5; d++) {
-              for (let p = 0; p < 7; p++) {
-                const key = `${d}-${p}`;
-                if (!newPool[y][s][f][key]) {
-                  newPool[y][s][f][key] = [];
-                  updated = true;
-                }
-                
-                const yearPresets = ALL_YEAR_SUBJECT_PRESETS[y];
-                const facultyPresets = yearPresets?.[f];
-                const semesterPresets = facultyPresets?.[s];
-                const periodPresets = semesterPresets?.[d.toString()]?.[p.toString()] || [];
-                
-                // Identify presets that are missing from the current pool for this cell
-                const currentSubjects = newPool[y][s][f][key];
-                const missingPresets = periodPresets.filter(preset => 
-                  !currentSubjects.some((s: Subject) => s.code === preset.code)
-                );
-
-                if (missingPresets.length > 0) {
-                  const newSubjects = [
-                    ...currentSubjects,
-                    ...missingPresets.map((preset, sIdx) => ({
-                      ...preset,
-                      color: SUBJECT_COLORS[(currentSubjects.length + sIdx) % SUBJECT_COLORS.length].name
-                    }))
-                  ];
-                  newPool[y][s][f][key] = newSubjects;
-                  updated = true;
-                }
+          for (let d = 0; d < 5; d++) {
+            for (let p = 0; p < 7; p++) {
+              const key = `${d}-${p}`;
+              
+              const yearPresets = ALL_YEAR_SUBJECT_PRESETS[y];
+              const facultyPresets = yearPresets?.[f];
+              const semesterPresets = facultyPresets?.[s];
+              const periodPresets = semesterPresets?.[d.toString()]?.[p.toString()];
+              
+              if (periodPresets && periodPresets.length > 0) {
+                // プリセットが定義されている場合
+                initialPool[y][s][f][key] = periodPresets.map((preset, sIdx) => ({
+                  ...preset,
+                  color: SUBJECT_COLORS[sIdx % SUBJECT_COLORS.length].name
+                }));
+              } else {
+                // プリセットがない場合は空配列にする
+                initialPool[y][s][f][key] = [];
               }
             }
-          });
+          }
         });
       });
-
-      if (updated) {
-        return newPool;
-      }
-      return prev;
     });
+    
+    setSubjectPool(initialPool);
+    // Timetable data is left empty by default as requested
   }, []);
 
   // Links state
@@ -730,7 +708,7 @@ export default function App() {
                       <button
                         key={num}
                         onClick={() => handleMaxPeriodsChange(num)}
-                        className={`py-2 text-sm font-medium rounded-md transition-all ${maxPeriods === num ? 'bg-white shadow-sm text-indigo-600' : 'text-neutral-400 hover:text-neutral-700'}`}
+                        className={`py-2 text-sm font-medium rounded-md transition-all ${maxPeriods === num ? 'bg-white shadow-sm text-[#a9383a]' : 'text-neutral-400 hover:text-neutral-700'}`}
                       >
                         {num}限まで
                       </button>
@@ -761,13 +739,13 @@ export default function App() {
                 <div className="grid grid-cols-2 gap-2 p-1 bg-neutral-100 rounded-lg">
                   <button
                     onClick={() => setSemester('Spring')}
-                    className={`py-2 text-sm font-medium rounded-md transition-all ${semester === 'Spring' ? 'bg-white shadow-sm text-indigo-600' : 'text-neutral-500 hover:text-neutral-700'}`}
+                    className={`py-2 text-sm font-medium rounded-md transition-all ${semester === 'Spring' ? 'bg-white shadow-sm text-[#a9383a]' : 'text-neutral-500 hover:text-neutral-700'}`}
                   >
                     春セメスター
                   </button>
                   <button
                     onClick={() => setSemester('Fall')}
-                    className={`py-2 text-sm font-medium rounded-md transition-all ${semester === 'Fall' ? 'bg-white shadow-sm text-indigo-600' : 'text-neutral-500 hover:text-neutral-700'}`}
+                    className={`py-2 text-sm font-medium rounded-md transition-all ${semester === 'Fall' ? 'bg-white shadow-sm text-[#a9383a]' : 'text-neutral-500 hover:text-neutral-700'}`}
                   >
                     秋セメスター
                   </button>
@@ -793,14 +771,14 @@ export default function App() {
                 <div className="grid grid-cols-2 gap-3">
                   <button 
                     onClick={handleExport}
-                    className="flex items-center justify-center gap-2 py-3 text-sm font-medium text-indigo-600 border border-indigo-100 rounded-lg hover:bg-indigo-50 transition-colors"
+                    className="flex items-center justify-center gap-2 py-3 text-sm font-medium text-[#C9383A] border border-[#a9383a] rounded-lg hover:bg-indigo-50 transition-colors"
                   >
                     <Download size={16} />
-                    書き出し
+                    エクスポート
                   </button>
                   <button 
                     onClick={() => fileInputRef.current?.click()}
-                    className="flex items-center justify-center gap-2 py-3 text-sm font-medium text-indigo-600 border border-indigo-100 rounded-lg hover:bg-indigo-50 transition-colors"
+                    className="flex items-center justify-center gap-2 py-3 text-sm font-medium text-[#C9383A] border border-[#a9383a] rounded-lg hover:bg-indigo-50 transition-colors"
                   >
                     <Upload size={16} />
                     インポート
@@ -808,7 +786,7 @@ export default function App() {
                 </div>
                 <button 
                   onClick={() => setIsResetting(true)}
-                  className="w-full py-3 text-sm font-medium text-red-600 border border-red-100 rounded-lg hover:bg-red-50 transition-colors"
+                  className="w-full py-3 text-sm font-medium text-white bg-red-500 border border-red-100 rounded-lg hover:bg-red-600 transition-colors"
                 >
                   時間割をリセット
                 </button>
@@ -848,7 +826,7 @@ export default function App() {
                         setYear(y);
                         setIsSelectingYear(false);
                       }}
-                      className={`flex items-center justify-between p-4 rounded-xl border transition-all ${year === y ? 'bg-indigo-50 border-indigo-200 text-indigo-700' : 'bg-white border-neutral-100 text-neutral-600 hover:bg-neutral-50'}`}
+                      className={`flex items-center justify-between p-4 rounded-xl border transition-all ${year === y ? 'bg-[#FFEDED] border-[#a9383a] text-[#C9383A]' : 'bg-white border-neutral-100 text-neutral-600 hover:bg-neutral-50'}`}
                     >
                       <span className="font-bold">{y}年度</span>
                       {year === y && <Check size={18} />}
@@ -891,7 +869,7 @@ export default function App() {
                         setFaculty(f);
                         setIsSelectingFaculty(false);
                       }}
-                      className={`flex items-center justify-between p-4 rounded-xl border transition-all ${faculty === f ? 'bg-indigo-50 border-indigo-200 text-indigo-700' : 'bg-white border-neutral-100 text-neutral-600 hover:bg-neutral-50'}`}
+                      className={`flex items-center justify-between p-4 rounded-xl border transition-all ${faculty === f ? 'bg-[#FFEDED] border-[#a9383a] text-[#C9383A]' : 'bg-white border-neutral-100 text-neutral-600 hover:bg-neutral-50'}`}
                     >
                       <span className="font-bold">{f}</span>
                       {faculty === f && <Check size={18} />}
@@ -1297,21 +1275,21 @@ export default function App() {
       <nav className="flex-none bg-white border-t border-neutral-200 flex justify-around items-stretch h-14 z-20 shadow-[0_-1px_10px_rgba(0,0,0,0.05)]">
         <button
           onClick={() => setActiveTab('timetable')}
-          className={`flex-1 flex flex-col items-center justify-center gap-0.5 transition-colors hover:bg-neutral-50 active:bg-neutral-100 ${activeTab === 'timetable' ? 'text-indigo-600' : 'text-neutral-400'}`}
+          className={`flex-1 flex flex-col items-center justify-center gap-0.5 transition-colors hover:bg-neutral-50 active:bg-neutral-100 ${activeTab === 'timetable' ? 'text-[#a9383a]' : 'text-neutral-400'}`}
         >
           <Calendar size={20} />
           <span className="text-[10px] font-bold">時間割</span>
         </button>
         <button
           onClick={() => setActiveTab('links')}
-          className={`flex-1 flex flex-col items-center justify-center gap-0.5 transition-colors hover:bg-neutral-50 active:bg-neutral-100 ${activeTab === 'links' ? 'text-indigo-600' : 'text-neutral-400'}`}
+          className={`flex-1 flex flex-col items-center justify-center gap-0.5 transition-colors hover:bg-neutral-50 active:bg-neutral-100 ${activeTab === 'links' ? 'text-[#a9383a]' : 'text-neutral-400'}`}
         >
           <LinkIcon size={20} />
           <span className="text-[10px] font-bold">リンク</span>
         </button>
         <button
           onClick={() => setActiveTab('settings')}
-          className={`flex-1 flex flex-col items-center justify-center gap-0.5 transition-colors hover:bg-neutral-50 active:bg-neutral-100 ${activeTab === 'settings' ? 'text-indigo-600' : 'text-neutral-400'}`}
+          className={`flex-1 flex flex-col items-center justify-center gap-0.5 transition-colors hover:bg-neutral-50 active:bg-neutral-100 ${activeTab === 'settings' ? 'text-[#a9383a]' : 'text-neutral-400'}`}
         >
           <Settings size={20} />
           <span className="text-[10px] font-bold">設定</span>
@@ -1484,7 +1462,7 @@ export default function App() {
       {/* Import Confirmation Modal */}
       <AnimatePresence>
         {isConfirmingImport && importData && (
-          <div className="fixed inset-0 z-[110] flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-[210] flex items-center justify-center p-4">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -1547,7 +1525,7 @@ export default function App() {
       {/* Import Error Modal */}
       <AnimatePresence>
         {importError && (
-          <div className="fixed inset-0 z-[120] flex items-center justify-center p-4">
+          <div className="fixed inset-0 z-[220] flex items-center justify-center p-4">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
