@@ -281,9 +281,9 @@ export default function App() {
     alert('データベースを最新の状態に同期しました。\n（プログラムから削除された古いデータは消去されました）');
   };
 
-    const handleRefreshApp = () => {
-    window.location.reload();
-  };
+  //   const handleRefreshApp = () => {
+  //   window.location.reload();
+  // };
 
   const handleImport = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -841,13 +841,13 @@ export default function App() {
                   <RefreshCw size={16} />
                   授業リストの更新
                 </button>
-                <button 
+                {/* <button 
                   onClick={handleRefreshApp}
                   className="w-full flex items-center justify-center gap-2 py-3 text-sm font-medium text-emerald-600 border border-emerald-100 rounded-lg hover:bg-emerald-50 transition-colors"
-                >
-                  <RotateCcw size={16} />
+                > */}
+                  {/* <RotateCcw size={16} />
                   アプリをリフレッシュ
-                </button>
+                </button> */}
                 <button 
                   onClick={() => setIsResetting(true)}
                   className="w-full py-3 text-sm font-medium text-white bg-red-500 border border-red-100 rounded-lg hover:bg-red-600 transition-colors"
