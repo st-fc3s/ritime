@@ -129,49 +129,67 @@ export default function App() {
     return saved ? JSON.parse(saved) : {};
   });
 
-  // Initialize sample data for all years, semesters, faculties and cells
   useEffect(() => {
-    const savedPool = localStorage.getItem('subjectPool');
-    if (savedPool) return; // Don't overwrite if we have saved data
+    setSubjectPool(prev => {
+      let updated = false;
+      const newPool = JSON.parse(JSON.stringify(prev));
 
-    const initialPool: SubjectPool = {};
-    
-    YEARS.forEach(y => {
-      initialPool[y] = {};
-      
-      (['Spring', 'Fall'] as Semester[]).forEach(s => {
-        initialPool[y][s] = {};
+      YEARS.forEach(y => {
+        if (!newPool[y]) {
+          newPool[y] = {};
+          updated = true;
+        }
         
-        FACULTIES.forEach((f) => {
-          initialPool[y][s][f] = {};
+        (['Spring', 'Fall'] as Semester[]).forEach(s => {
+          if (!newPool[y][s]) {
+            newPool[y][s] = {};
+            updated = true;
+          }
           
-          for (let d = 0; d < 5; d++) {
-            for (let p = 0; p < 7; p++) {
-              const key = `${d}-${p}`;
-              
-              const yearPresets = ALL_YEAR_SUBJECT_PRESETS[y];
-              const facultyPresets = yearPresets?.[f];
-              const semesterPresets = facultyPresets?.[s];
-              const periodPresets = semesterPresets?.[d.toString()]?.[p.toString()];
-              
-              if (periodPresets && periodPresets.length > 0) {
-                // プリセットが定義されている場合
-                initialPool[y][s][f][key] = periodPresets.map((preset, sIdx) => ({
+          FACULTIES.forEach((f) => {
+            if (!newPool[y][s][f]) {
+              newPool[y][s][f] = {};
+              updated = true;
+            }
+            
+            for (let d = 0; d < 5; d++) {
+              for (let p = 0; p < 7; p++) {
+                const key = `${d}-${p}`;
+                
+                // 1. 現在のプールから「ユーザーが自分で追加した授業(isCustom)」だけを抽出
+                const currentPool = newPool[y][s][f][key] || [];
+                const customSubjects = currentPool.filter((subj: Subject) => subj.isCustom);
+                
+                // 2. プログラム側の最新プリセットを取得
+                const yearPresets = ALL_YEAR_SUBJECT_PRESETS[y];
+                const periodPresets = yearPresets?.[f]?.[s]?.[d.toString()]?.[p.toString()] || [];
+                
+                // 3. プリセットに色を割り当て
+                const coloredPresets = periodPresets.map((preset, idx) => ({
                   ...preset,
-                  color: SUBJECT_COLORS[sIdx % SUBJECT_COLORS.length].name
+                  color: SUBJECT_COLORS[idx % SUBJECT_COLORS.length].name,
+                  isCustom: false
                 }));
-              } else {
-                // プリセットがない場合は空配列にする
-                initialPool[y][s][f][key] = [];
+
+                // 4. 「カスタム授業」 + 「最新プリセット」 でプールを再構築
+                const nextPool = [...customSubjects, ...coloredPresets];
+                
+                // 変更があるかチェック
+                if (JSON.stringify(currentPool) !== JSON.stringify(nextPool)) {
+                  newPool[y][s][f][key] = nextPool;
+                  updated = true;
+                }
               }
             }
-          }
+          });
         });
       });
+
+      if (updated) {
+        return newPool;
+      }
+      return prev;
     });
-    
-    setSubjectPool(initialPool);
-    // Timetable data is left empty by default as requested
   }, []);
 
   // Links state
@@ -390,18 +408,12 @@ export default function App() {
     localStorage.setItem('timetableData', JSON.stringify(timetableData));
   }, [timetableData]);
 
-  useEffect(() => {
-    localStorage.setItem('subjectPool', JSON.stringify(subjectPool));
-  }, [subjectPool]);
-
-  // Automatic year/semester switching
-  useEffect(() => {
-    const checkDate = () => {
+useEffect(() => {
+  const checkDateAndSync = () => {
       const currentYear = getCurrentAcademicYear();
       const currentSemester = getCurrentSemester();
       
-      // Only update if it's different from current state
-      // This will trigger even if the user has completed setup
+      // 1. Update year/semester if needed
       setYear(prev => {
         if (prev !== currentYear) return currentYear;
         return prev;
@@ -410,13 +422,16 @@ export default function App() {
         if (prev !== currentSemester) return currentSemester;
         return prev;
       });
+
+      // 2. Trigger Database Sync (Smart Sync)
+      refreshDatabase();
     };
 
     // Check on mount
-    checkDate();
+    checkDateAndSync();
 
-    // Check every hour to handle date transitions while app is open
-    const interval = setInterval(checkDate, 1000 * 60 * 60);
+    // Check every hour (1-hour update)
+    const interval = setInterval(checkDateAndSync, 1000 * 60 * 60);
     return () => clearInterval(interval);
   }, []);
 
@@ -1860,3 +1875,4 @@ export default function App() {
     </div>
   );
 }
+
