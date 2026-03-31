@@ -856,7 +856,7 @@ export default function App() {
                   className="w-full flex items-center justify-center gap-2 py-3 text-sm font-medium text-amber-600 border border-amber-100 rounded-lg hover:bg-amber-50 transition-colors"
                 >
                   <RefreshCw size={16} />
-                  データベースの更新
+                  授業リストの更新
                 </button>
                 <button 
                   onClick={() => setIsResetting(true)}
