@@ -2,7 +2,7 @@ import React, { useState, useRef, useMemo, useEffect } from 'react';
 import { Calendar, Link as LinkIcon, Settings, Plus, X, ChevronRight, ChevronLeft, Upload, Download, Check, GraduationCap, Layout, AlertTriangle } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Semester, Year, Subject, TimetableData, LinkCategory, LinkItem, SubjectPool, Faculty} from './types';
-import { YEARS, FACULTIES, ALL_YEAR_SUBJECT_PRESETS, LOCATION_SUFFIXES } from './data/presets';
+import { YEARS, FACULTIES, ALL_YEAR_SUBJECT_PRESETS } from './data/presets';
 import { LINK_PRESETS } from './data/links';
 
 const DAYS = ['月', '火', '水', '木', '金'];

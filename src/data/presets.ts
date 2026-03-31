@@ -72,8 +72,3 @@ export const ALL_YEAR_SUBJECT_PRESETS: Record<Year, Record<Faculty, Record<Semes
   // ,'2028': {} as any
   // ,'2029': {} as any
 };
-
-/**
- * 場所のプリセット（接尾辞として使用）
- */
-export const LOCATION_SUFFIXES = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
