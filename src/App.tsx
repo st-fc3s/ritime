@@ -1653,7 +1653,7 @@ export default function App() {
                       <input
                         type="text"
                         required
-                        placeholder="例: 数学I"
+                        placeholder="例: 英語上級"
                         value={newSubject.name}
                         onChange={e => setNewSubject(prev => ({ ...prev, name: e.target.value }))}
                         className="w-full p-2.5 bg-neutral-100 border-none rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
@@ -1663,7 +1663,7 @@ export default function App() {
                       <label className="text-[10px] font-bold text-neutral-500 uppercase">教授名</label>
                       <input
                         type="text"
-                        placeholder="例: 山田 太郎"
+                        placeholder="例: 立命 太郎"
                         value={newSubject.professor}
                         onChange={e => setNewSubject(prev => ({ ...prev, professor: e.target.value }))}
                         className="w-full p-2.5 bg-neutral-100 border-none rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
@@ -1673,7 +1673,7 @@ export default function App() {
                       <label className="text-[10px] font-bold text-neutral-500 uppercase">場所</label>
                       <input
                         type="text"
-                        placeholder="例: A棟 101教室"
+                        placeholder="例: H321"
                         value={newSubject.location}
                         onChange={e => setNewSubject(prev => ({ ...prev, location: e.target.value }))}
                         className="w-full p-2.5 bg-neutral-100 border-none rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
