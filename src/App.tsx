@@ -1366,7 +1366,7 @@ export default function App() {
           className={`flex-1 flex flex-col items-center justify-center gap-0.5 transition-colors hover:bg-neutral-50 active:bg-neutral-100 ${activeTab === 'settings' ? 'text-[#a9383a]' : 'text-neutral-400'}`}
         >
           <Settings size={20} />
-          <span className="text-[10px] font-bold">設定</span>
+          <span className="text-[10px] font-bold">設定・更新</span>
         </button>
       </nav>
 
