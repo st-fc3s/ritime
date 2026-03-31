@@ -843,7 +843,7 @@ useEffect(() => {
                     インポート
                   </button>
                 </div>
-                <button 
+                {/* <button 
                   onClick={refreshDatabase}
                   className="w-full flex items-center justify-center gap-2 py-3 text-sm font-medium text-amber-600 border border-amber-100 rounded-lg hover:bg-amber-50 transition-colors"
                 >
@@ -856,7 +856,7 @@ useEffect(() => {
                 >
                   <RotateCcw size={16} />
                   アプリをリフレッシュ
-                </button>
+                </button> */}
                 <button 
                   onClick={() => setIsResetting(true)}
                   className="w-full py-3 text-sm font-medium text-white bg-red-500 border border-red-100 rounded-lg hover:bg-red-600 transition-colors"
