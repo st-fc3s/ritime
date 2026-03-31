@@ -237,69 +237,48 @@ export default function App() {
 
   const refreshDatabase = () => {
     setSubjectPool(prev => {
-      let updated = false;
       const newPool = JSON.parse(JSON.stringify(prev));
 
       YEARS.forEach(y => {
-        if (!newPool[y]) {
-          newPool[y] = {};
-          updated = true;
-        }
+        if (!newPool[y]) newPool[y] = {};
         
         (['Spring', 'Fall'] as Semester[]).forEach(s => {
-          if (!newPool[y][s]) {
-            newPool[y][s] = {};
-            updated = true;
-          }
+          if (!newPool[y][s]) newPool[y][s] = {};
           
           FACULTIES.forEach((f) => {
-            if (!newPool[y][s][f]) {
-              newPool[y][s][f] = {};
-              updated = true;
-            }
+            if (!newPool[y][s][f]) newPool[y][s][f] = {};
             
             for (let d = 0; d < 5; d++) {
               for (let p = 0; p < 7; p++) {
                 const key = `${d}-${p}`;
-                if (!newPool[y][s][f][key]) {
-                  newPool[y][s][f][key] = [];
-                  updated = true;
-                }
                 
+                // 1. 現在のプールから「ユーザーが自分で追加した授業(isCustom)」だけを抽出
+                const currentPool = newPool[y][s][f][key] || [];
+                const customSubjects = currentPool.filter((subj: Subject) => subj.isCustom);
+                
+                // 2. プログラム側の最新プリセットを取得
                 const yearPresets = ALL_YEAR_SUBJECT_PRESETS[y];
-                const facultyPresets = yearPresets?.[f];
-                const semesterPresets = facultyPresets?.[s];
-                const periodPresets = semesterPresets?.[d.toString()]?.[p.toString()] || [];
+                const periodPresets = yearPresets?.[f]?.[s]?.[d.toString()]?.[p.toString()] || [];
                 
-                const currentSubjects = newPool[y][s][f][key];
-                const missingPresets = periodPresets.filter(preset => 
-                  !currentSubjects.some((s: Subject) => s.code === preset.code)
-                );
+                // 3. プリセットに色を割り当て
+                const coloredPresets = periodPresets.map((preset, idx) => ({
+                  ...preset,
+                  color: SUBJECT_COLORS[idx % SUBJECT_COLORS.length].name,
+                  isCustom: false
+                }));
 
-                if (missingPresets.length > 0) {
-                  const newSubjects = [
-                    ...currentSubjects,
-                    ...missingPresets.map((preset, sIdx) => ({
-                      ...preset,
-                      color: SUBJECT_COLORS[(currentSubjects.length + sIdx) % SUBJECT_COLORS.length].name
-                    }))
-                  ];
-                  newPool[y][s][f][key] = newSubjects;
-                  updated = true;
-                }
+                // 4. 「カスタム授業」 + 「最新プリセット」 でプールを再構築（古いプリセットはここで消える）
+                newPool[y][s][f][key] = [...customSubjects, ...coloredPresets];
               }
             }
           });
         });
       });
 
-      if (updated) {
-        return newPool;
-      }
-      return prev;
+      return newPool;
     });
     
-    alert('授業リストを最新の状態に更新しました。');
+    alert('データベースを最新の状態に同期しました。\n（プログラムから削除された古いデータは消去されました）');
   };
 
     const handleRefreshApp = () => {
