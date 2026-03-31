@@ -1,0 +1,5 @@
+{
+  "name": "大学時間割アプリ",
+  "description": "時間割管理、リンク集、セメスター設定機能を備えた大学生活支援アプリ",
+  "requestFramePermissions": []
+}
