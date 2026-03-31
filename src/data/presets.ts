@@ -17,7 +17,11 @@ import { presets as presets26JohoFall } from './presets/Joho/26JohoFall';
 /**
  * 年度設定
  */
-export const YEARS: Year[] = ['2026', '2027', '2028', '2029'];
+export const YEARS: Year[] = ['2026'
+  ,'2027'
+  ,'2028'
+  ,'2029'
+];
 
 /**
  * 学部設定
@@ -61,10 +65,10 @@ export const ALL_YEAR_SUBJECT_PRESETS: Record<Year, Record<Faculty, Record<Semes
       'Spring': presets26JohoSpring,
       'Fall': presets26JohoFall
     }
-  },
-  '2027': {} as any, // 必要に応じて追加
-  '2028': {} as any,
-  '2029': {} as any
+  }
+  ,'2027': {} as any
+  ,'2028': {} as any
+  ,'2029': {} as any
 };
 
 /**
