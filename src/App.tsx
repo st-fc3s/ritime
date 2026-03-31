@@ -1,5 +1,5 @@
 import React, { useState, useRef, useMemo, useEffect } from 'react';
-import { Calendar, Link as LinkIcon, Settings, Plus, X, ChevronRight, ChevronLeft, Upload, Download, Check, GraduationCap, Layout, AlertTriangle, RefreshCw } from 'lucide-react';
+import { Calendar, Link as LinkIcon, Settings, Plus, X, ChevronRight, ChevronLeft, Upload, Download, Check, GraduationCap, Layout, AlertTriangle, RefreshCw, RotateCcw} from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Semester, Year, Subject, TimetableData, LinkCategory, LinkItem, SubjectPool, Faculty} from './types';
 import { YEARS, FACULTIES, ALL_YEAR_SUBJECT_PRESETS } from './data/presets';
@@ -300,6 +300,10 @@ export default function App() {
     });
     
     alert('授業リストを最新の状態に更新しました。');
+  };
+
+    const handleRefreshApp = () => {
+    window.location.reload();
   };
 
   const handleImport = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -857,6 +861,13 @@ export default function App() {
                 >
                   <RefreshCw size={16} />
                   授業リストの更新
+                </button>
+                <button 
+                  onClick={handleRefreshApp}
+                  className="w-full flex items-center justify-center gap-2 py-3 text-sm font-medium text-emerald-600 border border-emerald-100 rounded-lg hover:bg-emerald-50 transition-colors"
+                >
+                  <RotateCcw size={16} />
+                  アプリをリフレッシュ
                 </button>
                 <button 
                   onClick={() => setIsResetting(true)}
