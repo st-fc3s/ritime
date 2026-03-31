@@ -1,5 +1,5 @@
 import React, { useState, useRef, useMemo, useEffect } from 'react';
-import { Calendar, Link as LinkIcon, Settings, Plus, X, ChevronRight, ChevronLeft, Upload, Download, Check, GraduationCap, Layout, AlertTriangle } from 'lucide-react';
+import { Calendar, Link as LinkIcon, Settings, Plus, X, ChevronRight, ChevronLeft, Upload, Download, Check, GraduationCap, Layout, AlertTriangle, RefreshCw } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Semester, Year, Subject, TimetableData, LinkCategory, LinkItem, SubjectPool, Faculty} from './types';
 import { YEARS, FACULTIES, ALL_YEAR_SUBJECT_PRESETS } from './data/presets';
@@ -233,6 +233,73 @@ export default function App() {
     a.click();
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
+  };
+
+  const refreshDatabase = () => {
+    setSubjectPool(prev => {
+      let updated = false;
+      const newPool = JSON.parse(JSON.stringify(prev));
+
+      YEARS.forEach(y => {
+        if (!newPool[y]) {
+          newPool[y] = {};
+          updated = true;
+        }
+        
+        (['Spring', 'Fall'] as Semester[]).forEach(s => {
+          if (!newPool[y][s]) {
+            newPool[y][s] = {};
+            updated = true;
+          }
+          
+          FACULTIES.forEach((f) => {
+            if (!newPool[y][s][f]) {
+              newPool[y][s][f] = {};
+              updated = true;
+            }
+            
+            for (let d = 0; d < 5; d++) {
+              for (let p = 0; p < 7; p++) {
+                const key = `${d}-${p}`;
+                if (!newPool[y][s][f][key]) {
+                  newPool[y][s][f][key] = [];
+                  updated = true;
+                }
+                
+                const yearPresets = ALL_YEAR_SUBJECT_PRESETS[y];
+                const facultyPresets = yearPresets?.[f];
+                const semesterPresets = facultyPresets?.[s];
+                const periodPresets = semesterPresets?.[d.toString()]?.[p.toString()] || [];
+                
+                const currentSubjects = newPool[y][s][f][key];
+                const missingPresets = periodPresets.filter(preset => 
+                  !currentSubjects.some((s: Subject) => s.code === preset.code)
+                );
+
+                if (missingPresets.length > 0) {
+                  const newSubjects = [
+                    ...currentSubjects,
+                    ...missingPresets.map((preset, sIdx) => ({
+                      ...preset,
+                      color: SUBJECT_COLORS[(currentSubjects.length + sIdx) % SUBJECT_COLORS.length].name
+                    }))
+                  ];
+                  newPool[y][s][f][key] = newSubjects;
+                  updated = true;
+                }
+              }
+            }
+          });
+        });
+      });
+
+      if (updated) {
+        return newPool;
+      }
+      return prev;
+    });
+    
+    alert('データベースを最新の状態に更新しました。');
   };
 
   const handleImport = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -784,6 +851,13 @@ export default function App() {
                     インポート
                   </button>
                 </div>
+                <button 
+                  onClick={refreshDatabase}
+                  className="w-full flex items-center justify-center gap-2 py-3 text-sm font-medium text-amber-600 border border-amber-100 rounded-lg hover:bg-amber-50 transition-colors"
+                >
+                  <RefreshCw size={16} />
+                  データベースの更新
+                </button>
                 <button 
                   onClick={() => setIsResetting(true)}
                   className="w-full py-3 text-sm font-medium text-white bg-red-500 border border-red-100 rounded-lg hover:bg-red-600 transition-colors"
