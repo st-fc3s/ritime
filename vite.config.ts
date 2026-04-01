@@ -25,12 +25,14 @@ export default defineConfig(({mode}) => {
             {
               src: '/icon/pre-release192.png',
               sizes: '192x192',
-              type: 'image/png'
+              type: 'image/png',
+              purpose: 'any maskable'
             },
             {
               src: '/icon/pre-release512.png',
               sizes: '512x512',
-              type: 'image/png'
+              type: 'image/png',
+              purpose: 'any maskable'
             }
           ]
         },
