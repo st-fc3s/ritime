@@ -53,7 +53,7 @@ const getCurrentSemester = (): Semester => {
 };
 
 const SUBJECT_COLORS = [
-  { name: 'Indigo', bg: 'bg-indigo-50', text: 'text-indigo-700', border: 'border-indigo-200', active: 'bg-indigo-600' },
+  { name: 'Theme', bg: 'bg-[#FFEDED]', text: 'text-[#C9383A]', border: 'border-[#a9383a]', active: 'bg-[#a9383a]' },
   { name: 'Rose', bg: 'bg-rose-50', text: 'text-rose-700', border: 'border-rose-200', active: 'bg-rose-600' },
   { name: 'Emerald', bg: 'bg-emerald-50', text: 'text-emerald-700', border: 'border-emerald-200', active: 'bg-emerald-600' },
   { name: 'Amber', bg: 'bg-amber-50', text: 'text-amber-700', border: 'border-amber-200', active: 'bg-amber-600' },
@@ -737,7 +737,7 @@ useEffect(() => {
                           className="flex items-center justify-between p-4 hover:bg-neutral-50 transition-colors group"
                         >
                           <span className="font-medium">{link.title}</span>
-                          <ChevronRight size={16} className="text-neutral-300 group-hover:text-indigo-500 transition-colors" />
+                          <ChevronRight size={16} className="text-neutral-300 group-hover:text-[#a9383a] transition-colors" />
                         </a>
                       ))}
                     </div>
@@ -830,14 +830,14 @@ useEffect(() => {
                 <div className="grid grid-cols-2 gap-3">
                   <button 
                     onClick={handleExport}
-                    className="flex items-center justify-center gap-2 py-3 text-sm font-medium text-[#C9383A] border border-[#a9383a] rounded-lg hover:bg-indigo-50 transition-colors"
+                    className="flex items-center justify-center gap-2 py-3 text-sm font-medium text-[#C9383A] border border-[#a9383a] rounded-lg hover:bg-[#FFEDED] transition-colors"
                   >
                     <Download size={16} />
                     エクスポート
                   </button>
                   <button 
                     onClick={() => fileInputRef.current?.click()}
-                    className="flex items-center justify-center gap-2 py-3 text-sm font-medium text-[#C9383A] border border-[#a9383a] rounded-lg hover:bg-indigo-50 transition-colors"
+                    className="flex items-center justify-center gap-2 py-3 text-sm font-medium text-[#C9383A] border border-[#a9383a] rounded-lg hover:bg-[#FFEDED] transition-colors"
                   >
                     <Upload size={16} />
                     インポート
@@ -1069,12 +1069,12 @@ useEffect(() => {
                           href={confirmingSubject.syllabusUrl} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="p-3 bg-indigo-50 rounded-xl flex flex-col justify-center hover:bg-indigo-100 transition-colors group"
+                          className="p-3 bg-[#FFEDED] rounded-xl flex flex-col justify-center hover:bg-[#FFD6D6] transition-colors group"
                         >
-                          <p className="text-[9px] font-bold text-indigo-400 uppercase">シラバス</p>
+                          <p className="text-[9px] font-bold text-[#C9383A] uppercase opacity-70">シラバス</p>
                           <div className="flex items-center gap-1">
-                            <span className="text-xs font-bold text-indigo-600">開く</span>
-                            <ChevronRight size={10} className="text-indigo-600 group-hover:translate-x-0.5 transition-transform" />
+                            <span className="text-xs font-bold text-[#a9383a]">開く</span>
+                            <ChevronRight size={10} className="text-[#a9383a] group-hover:translate-x-0.5 transition-transform" />
                           </div>
                         </a>
                       ) : (
@@ -1193,12 +1193,12 @@ useEffect(() => {
                           href={viewingSubjectCell.subject.syllabusUrl} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="p-3 bg-indigo-50 rounded-xl flex flex-col justify-center hover:bg-indigo-100 transition-colors group"
+                          className="p-3 bg-[#FFEDED] rounded-xl flex flex-col justify-center hover:bg-[#FFD6D6] transition-colors group"
                         >
-                          <p className="text-[9px] font-bold text-indigo-400 uppercase">シラバス</p>
+                          <p className="text-[9px] font-bold text-[#C9383A] uppercase opacity-70">シラバス</p>
                           <div className="flex items-center gap-1">
-                            <span className="text-xs font-bold text-indigo-600">開く</span>
-                            <ChevronRight size={10} className="text-indigo-600 group-hover:translate-x-0.5 transition-transform" />
+                            <span className="text-xs font-bold text-[#a9383a]">開く</span>
+                            <ChevronRight size={10} className="text-[#a9383a] group-hover:translate-x-0.5 transition-transform" />
                           </div>
                         </a>
                       ) : (
@@ -1380,7 +1380,7 @@ useEffect(() => {
             >
               <div className="p-8 space-y-8 overflow-y-auto">
                 <div className="text-center space-y-2">
-                  <div className="w-16 h-16 bg-indigo-600 rounded-2xl flex items-center justify-center mx-auto shadow-xl shadow-indigo-200 mb-4 rotate-3">
+                  <div className="w-16 h-16 bg-[#a9383a] rounded-2xl flex items-center justify-center mx-auto shadow-xl shadow-[#FFEDED] mb-4 rotate-3">
                     <Calendar size={32} className="text-white" />
                   </div>
                   <h1 className="text-2xl font-black text-neutral-900">ようこそ！</h1>
@@ -1393,10 +1393,10 @@ useEffect(() => {
                   <div className="grid grid-cols-1 gap-4">
                     <button
                       onClick={() => setSetupMode('manual')}
-                      className="group p-6 bg-white border-2 border-neutral-100 rounded-[24px] text-left hover:border-indigo-600 hover:bg-indigo-50 transition-all"
+                      className="group p-6 bg-white border-2 border-neutral-100 rounded-[24px] text-left hover:border-[#a9383a] hover:bg-[#FFEDED] transition-all"
                     >
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                        <div className="w-12 h-12 bg-[#FFEDED] rounded-xl flex items-center justify-center text-[#a9383a] group-hover:bg-[#a9383a] group-hover:text-white transition-colors">
                           <Plus size={24} />
                         </div>
                         <div>
@@ -1408,10 +1408,10 @@ useEffect(() => {
 
                     <button
                       onClick={() => setSetupMode('import')}
-                      className="group p-6 bg-white border-2 border-neutral-100 rounded-[24px] text-left hover:border-indigo-600 hover:bg-indigo-50 transition-all"
+                      className="group p-6 bg-white border-2 border-neutral-100 rounded-[24px] text-left hover:border-[#a9383a] hover:bg-[#FFEDED] transition-all"
                     >
                       <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-colors">
+                        <div className="w-12 h-12 bg-[#FFEDED] rounded-xl flex items-center justify-center text-[#a9383a] group-hover:bg-[#a9383a] group-hover:text-white transition-colors">
                           <Upload size={24} />
                         </div>
                         <div>
@@ -1435,7 +1435,7 @@ useEffect(() => {
                             onClick={() => setYear(y)}
                             className={`py-3 rounded-2xl font-bold transition-all border-2 ${
                               year === y 
-                                ? 'bg-indigo-600 border-indigo-600 text-white shadow-lg shadow-indigo-100' 
+                                ? 'bg-[#a9383a] border-[#a9383a] text-white shadow-lg shadow-[#FFEDED]' 
                                 : 'bg-white border-neutral-100 text-neutral-400 hover:border-neutral-200'
                             }`}
                           >
@@ -1455,7 +1455,7 @@ useEffect(() => {
                             onClick={() => setSemester(s)}
                             className={`py-3 rounded-2xl font-bold transition-all border-2 ${
                               semester === s 
-                                ? 'bg-indigo-600 border-indigo-600 text-white shadow-lg shadow-indigo-100' 
+                                ? 'bg-[#a9383a] border-[#a9383a] text-white shadow-lg shadow-[#FFEDED]' 
                                 : 'bg-white border-neutral-100 text-neutral-400 hover:border-neutral-200'
                             }`}
                           >
@@ -1475,7 +1475,7 @@ useEffect(() => {
                             onClick={() => setFaculty(f)}
                             className={`py-3 px-4 rounded-2xl font-bold text-left transition-all border-2 flex items-center justify-between ${
                               faculty === f 
-                                ? 'bg-indigo-600 border-indigo-600 text-white shadow-lg shadow-indigo-100' 
+                                ? 'bg-[#a9383a] border-[#a9383a] text-white shadow-lg shadow-[#FFEDED]' 
                                 : 'bg-white border-neutral-100 text-neutral-400 hover:border-neutral-200'
                             }`}
                           >
@@ -1505,13 +1505,13 @@ useEffect(() => {
 
                 {setupMode === 'import' && (
                   <div className="space-y-6">
-                    <div className="p-6 bg-indigo-50 rounded-[24px] border border-indigo-100 space-y-4">
-                      <p className="text-sm text-indigo-700 leading-relaxed font-medium text-center">
+                    <div className="p-6 bg-[#FFEDED] rounded-[24px] border border-[#FFD6D6] space-y-4">
+                      <p className="text-sm text-[#C9383A] leading-relaxed font-medium text-center">
                         以前に書き出した時間割データ（JSONファイル）を選択してください。
                       </p>
                       <button
                         onClick={() => fileInputRef.current?.click()}
-                        className="w-full py-4 bg-white text-indigo-600 font-bold rounded-2xl border-2 border-indigo-200 hover:bg-indigo-100 transition-all flex items-center justify-center gap-2"
+                        className="w-full py-4 bg-white text-[#a9383a] font-bold rounded-2xl border-2 border-[#a9383a] hover:bg-[#FFEDED] transition-all flex items-center justify-center gap-2"
                       >
                         <Upload size={20} />
                         ファイルを選択
@@ -1550,8 +1550,8 @@ useEffect(() => {
               className="relative bg-white w-full max-w-sm rounded-3xl overflow-hidden shadow-2xl p-6 space-y-6"
             >
               <div className="flex flex-col items-center text-center space-y-4">
-                <div className="w-16 h-16 bg-indigo-50 rounded-full flex items-center justify-center">
-                  <Upload size={32} className="text-indigo-600" />
+                <div className="w-16 h-16 bg-[#FFEDED] rounded-full flex items-center justify-center">
+                  <Upload size={32} className="text-[#a9383a]" />
                 </div>
                 <div className="space-y-2">
                   <h2 className="text-xl font-bold">時間割のインポート</h2>
@@ -1579,7 +1579,7 @@ useEffect(() => {
               <div className="flex flex-col gap-2">
                 <button
                   onClick={confirmImport}
-                  className="w-full py-4 bg-indigo-600 text-white font-bold rounded-2xl shadow-lg shadow-indigo-100 hover:bg-indigo-700 transition-all active:scale-[0.98]"
+                  className="w-full py-4 bg-[#a9383a] text-white font-bold rounded-2xl shadow-lg shadow-[#FFEDED] hover:bg-[#8e2f31] transition-all active:scale-[0.98]"
                 >
                   インポートを実行
                 </button>
@@ -1664,7 +1664,7 @@ useEffect(() => {
                   <h2 className="font-bold">
                     {DAYS[selectingCell.day]}曜 {PERIODS[selectingCell.period]}限 の授業を選択
                   </h2>
-                  <span className="text-[10px] text-indigo-600 font-medium">{year}年度 {faculty} のリストを表示中</span>
+                  <span className="text-[10px] text-[#a9383a] font-medium">{year}年度 {faculty} のリストを表示中</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <button 
@@ -1677,8 +1677,8 @@ useEffect(() => {
                     }}
                     className={`flex items-center gap-1 transition-colors ${
                       isAddingSubject 
-                        ? 'px-3 py-1.5 text-indigo-600 bg-indigo-50 rounded-full hover:bg-indigo-100' 
-                        : 'p-2 text-indigo-600 hover:bg-indigo-50 rounded-full'
+                        ? 'px-3 py-1.5 text-[#a9383a] bg-[#FFEDED] rounded-full hover:bg-[#FFD6D6]' 
+                        : 'p-2 text-[#a9383a] hover:bg-[#FFEDED] rounded-full'
                     }`}
                   >
                     {isAddingSubject ? (
@@ -1716,7 +1716,7 @@ useEffect(() => {
                             .slice(0, 5);
                           setNewSubject(prev => ({ ...prev, code: val }));
                         }}
-                        className="w-full p-2.5 bg-neutral-100 border-none rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
+                        className="w-full p-2.5 bg-neutral-100 border-none rounded-xl focus:ring-2 focus:ring-[#a9383a] outline-none text-sm"
                       />
                     </div>
                     <div className="space-y-1">
@@ -1729,7 +1729,7 @@ useEffect(() => {
                         placeholder="例: 英語上級"
                         value={newSubject.name}
                         onChange={e => setNewSubject(prev => ({ ...prev, name: e.target.value }))}
-                        className="w-full p-2.5 bg-neutral-100 border-none rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
+                        className="w-full p-2.5 bg-neutral-100 border-none rounded-xl focus:ring-2 focus:ring-[#a9383a] outline-none text-sm"
                       />
                     </div>
                     <div className="space-y-1">
@@ -1739,7 +1739,7 @@ useEffect(() => {
                         placeholder="例: 立命 太郎"
                         value={newSubject.professor}
                         onChange={e => setNewSubject(prev => ({ ...prev, professor: e.target.value }))}
-                        className="w-full p-2.5 bg-neutral-100 border-none rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
+                        className="w-full p-2.5 bg-neutral-100 border-none rounded-xl focus:ring-2 focus:ring-[#a9383a] outline-none text-sm"
                       />
                     </div>
                     <div className="space-y-1">
@@ -1749,7 +1749,7 @@ useEffect(() => {
                         placeholder="例: H321"
                         value={newSubject.location}
                         onChange={e => setNewSubject(prev => ({ ...prev, location: e.target.value }))}
-                        className="w-full p-2.5 bg-neutral-100 border-none rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
+                        className="w-full p-2.5 bg-neutral-100 border-none rounded-xl focus:ring-2 focus:ring-[#a9383a] outline-none text-sm"
                       />
                     </div>
                     <div className="space-y-1">
@@ -1759,13 +1759,13 @@ useEffect(() => {
                         placeholder="https://..."
                         value={newSubject.syllabusUrl}
                         onChange={e => setNewSubject(prev => ({ ...prev, syllabusUrl: e.target.value }))}
-                        className="w-full p-2.5 bg-neutral-100 border-none rounded-xl focus:ring-2 focus:ring-indigo-500 outline-none text-sm"
+                        className="w-full p-2.5 bg-neutral-100 border-none rounded-xl focus:ring-2 focus:ring-[#a9383a] outline-none text-sm"
                       />
                     </div>
                     <div className="pt-2">
                       <button
                         type="submit"
-                        className="w-full py-3.5 bg-indigo-600 text-white font-bold rounded-xl shadow-lg shadow-indigo-200 hover:bg-indigo-700 transition-colors text-sm"
+                        className="w-full py-3.5 bg-[#a9383a] text-white font-bold rounded-xl shadow-lg shadow-[#FFEDED] hover:bg-[#8e2f31] transition-colors text-sm"
                       >
                         保存
                       </button>
@@ -1802,7 +1802,7 @@ useEffect(() => {
                           return (
                             <button
                               key={idx}
-                              onClick={() => handleSelectSubject({ ...subject, color: isSelected ? registeredSubject.color : 'Indigo' })}
+                              onClick={() => handleSelectSubject({ ...subject, color: isSelected ? registeredSubject.color : 'Theme' })}
                               className={`flex items-center justify-between p-4 rounded-xl transition-all text-left group border-2 ${
                                 isSelected 
                                   ? `${colorConfig.bg} ${colorConfig.border} ${colorConfig.text}` 

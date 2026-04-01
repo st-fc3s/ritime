@@ -21,9 +21,7 @@ export const LINK_PRESETS: LinkCategory[] = [
     name: '立命館生協',
     links: [
       { title: '食堂 営業時間・メニュー', url: 'https://www.ritscoop.jp/food/' },
-      { title: '生協ホームページ', url: 'https://www.ritscoop.jp/' },
-      { title: '教科書販売', url: 'https://www.ritscoop.jp/textbook/' },
-    ]
+      { title: '生協ホームページ', url: 'https://www.ritscoop.jp/' }    ]
   },
   {
     name: '学生生活サポート',
