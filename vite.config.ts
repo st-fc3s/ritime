@@ -23,12 +23,12 @@ export default defineConfig(({mode}) => {
           start_url: '/',
           icons: [
             {
-              src: './icon/pre-release192.png',
+              src: '/icon/pre-release192.png',
               sizes: '192x192',
               type: 'image/png'
             },
             {
-              src: './icon/pre-release512.png',
+              src: '/icon/pre-release512.png',
               sizes: '512x512',
               type: 'image/png'
             }
