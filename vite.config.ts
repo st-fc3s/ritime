@@ -15,7 +15,7 @@ export default defineConfig(({mode}) => {
         includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
         manifest: {
           name: 'ritime',
-          short_name: '時間割',
+          short_name: 'ritime',
           description: '時間割管理、リンク集、セメスター設定機能を備えた大学生活支援アプリ',
           theme_color: '#a9383a',
           background_color: '#ffffff',
