@@ -17,18 +17,18 @@ export default defineConfig(({mode}) => {
           name: '大学時間割アプリ',
           short_name: '時間割',
           description: '時間割管理、リンク集、セメスター設定機能を備えた大学生活支援アプリ',
-          theme_color: '#4f46e5',
+          theme_color: '#a9383a',
           background_color: '#ffffff',
           display: 'standalone',
           start_url: '/',
           icons: [
             {
-              src: 'https://picsum.photos/seed/timetable/192/192',
+              src: './icon/pre-release192.png',
               sizes: '192x192',
               type: 'image/png'
             },
             {
-              src: 'https://picsum.photos/seed/timetable/512/512',
+              src: './icon/pre-release512.png',
               sizes: '512x512',
               type: 'image/png'
             }
