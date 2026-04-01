@@ -2,7 +2,6 @@ import { LinkCategory } from '../types';
 
 /**
  * リンク集の設定
- * 運営側でリンクを追加・変更する場合はここを編集してください
  */
 export const LINK_PRESETS: LinkCategory[] = [
   {
