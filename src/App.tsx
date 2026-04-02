@@ -1,4 +1,5 @@
 import React, { useState, useRef, useMemo, useEffect } from 'react';
+import { useRegisterSW } from 'virtual:pwa-register/react';
 import { Calendar, Link as LinkIcon, Settings, Plus, X, ChevronRight, ChevronLeft, Upload, Download, Check, GraduationCap, Layout, AlertTriangle, RefreshCw, RotateCcw} from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Semester, Year, Subject, TimetableData, LinkCategory, LinkItem, SubjectPool, Faculty} from './types';
@@ -63,6 +64,19 @@ const SUBJECT_COLORS = [
 ];
 
 export default function App() {
+  const {
+  needRefresh: [needRefresh, setNeedRefresh],
+  offlineReady: [offlineReady, setOfflineReady],
+  updateServiceWorker,
+} = useRegisterSW({
+  onRegistered(r) {
+    r && setInterval(() => {
+      r.update();
+    }, 60 * 60 * 1000);
+  },
+});
+
+
   const [activeTab, setActiveTab] = useState<'timetable' | 'links' | 'settings'>('timetable');
   const [isFirstTime, setIsFirstTime] = useState(() => {
     return !localStorage.getItem('hasCompletedSetup');
