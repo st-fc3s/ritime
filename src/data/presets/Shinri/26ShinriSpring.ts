@@ -16,7 +16,7 @@ export const presets: FacultyTimetablePresets = {
         { code: '52596', name: '（留）日本語Ⅷ（アカデミック日本語a）(O2)', professor: '大久保 加奈子', location: 'H243', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyXqQAK/202652596' },
         { code: '54045', name: '心理学概論(C)', professor: '北岡 明佳', location: 'AN110', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyNSQA0/202654045' },
         { code: '54059', name: '公認心理師の職責 (C)', professor: '中原 由望子', location: 'AN212', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyZ4QAK/202654059' },
-        { code: '54065', name: '認知科学(C)', professor: '林 勇吾', location: 'ラーニング・インフィニティ・ホール', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyesQAC/202654065' },
+        { code: '54065', name: '認知科学(C)', professor: '林 勇吾', location: 'H201', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyesQAC/202654065' },
         { code: '54066', name: '思考心理学(C)', professor: '本田 秀仁', location: 'AN211', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyfqQAC/202654066' },
         { code: '54089', name: '実験社会心理学(C)', professor: '村山 綾', location: 'AC232', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003Rz1eQAC/202654089' },
         { code: '54538', name: '世界と日本の食文化(P)', professor: '安井 大輔', location: 'AC230', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxA3QAK/202654538' },
@@ -40,7 +40,7 @@ export const presets: FacultyTimetablePresets = {
         { code: '54243', name: '基礎演習Ⅰ(CI)', professor: '中田 友貴', location: 'AN424', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxUyQAK/202654243' },
         { code: '54244', name: '基礎演習Ⅰ(CJ)', professor: '前原 寛子', location: 'AN425', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxVwQAK/202654244' },
         { code: '54578', name: 'エリアスタディ入門(W)', professor: '本多 健一', location: 'AC130', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxffQAC/202654578' },
-        { code: '54683', name: '教養ゼミナール(60)', professor: '荒井 秀典、清家 理、森永 貴彦', location: 'ラーニング・インフィニティ・ホール', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxKPQA0/202654683' }
+        { code: '54683', name: '教養ゼミナール(60)', professor: '荒井 秀典、清家 理、森永 貴彦', location: 'H201', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxKPQA0/202654683' }
       ],
       '3': [
         { code: '17089', name: '教養ゼミナール(3)', professor: 'リム・ボン', location: '志学館SG303', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RwFAQA0/202617089' },
@@ -141,7 +141,7 @@ export const presets: FacultyTimetablePresets = {
         { code: '54024', name: '英語Ｓ3(CN)', professor: '大石 衡聴', location: 'AN423', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxzuQAC/202654024' },
         { code: '54072', name: '色彩論(C)', professor: '西川 恵', location: 'AN211', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RylbQAC/202654072' },
         { code: '54516', name: '論理と思考(GV)', professor: '伊勢 俊彦', location: 'AN210', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyCsQAK/202654516' },
-        { code: '54555', name: '映像メディア実践入門 (GV) § 54556:特殊講義（映像メディア実践入門）(GV)', professor: '辻野 理花', location: 'ラーニング・インフィニティ・ホール', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxPDQA0/202654555' },
+        { code: '54555', name: '映像メディア実践入門 (GV) § 54556:特殊講義（映像メディア実践入門）(GV)', professor: '辻野 理花', location: 'H201', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxPDQA0/202654555' },
         { code: '54561', name: '現代社会と法(GV)', professor: '出口 雅久', location: 'AC130', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxS7QAK/202654561' },
         { code: '54631', name: '地域参加学習入門(GV)', professor: '秋吉 恵', location: 'AN110', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxboQAC/202654631' },
         { code: '54646', name: 'スポーツのサイエンス(GV)', professor: '稲田 愛子', location: 'AC230', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxnQQAS/202654646' }
@@ -174,7 +174,7 @@ export const presets: FacultyTimetablePresets = {
         { code: '54074', name: '青年心理学(C)', professor: '宇都宮 博', location: 'AN212', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RynVQAS/202654074' },
         { code: '54078', name: '言語発達論(C)', professor: '山本 寿子', location: 'AN211', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyrJQAS/202654078' },
         { code: '54088', name: '組織行動論（産業・組織心理学） (C)', professor: '今井 悠資', location: 'AN110', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003Rz0jQAC/202654088' },
-        { code: '54485', name: 'ピア・サポート論(GV)', professor: '中島 英博', location: 'ラーニング・インフィニティ・ホール', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxlSQAS/202654485' },
+        { code: '54485', name: 'ピア・サポート論(GV)', professor: '中島 英博', location: 'H201', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxlSQAS/202654485' },
         { code: '54501', name: '日本国憲法(GW)', professor: '上出 浩', location: 'C372', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003Rxw6QAC/202654501' },
         { code: '54520', name: '宗教と社会(GV)', professor: '中西 尋子', location: 'AC130', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyGkQAK/202654520' },
         { code: '54536', name: '世界の言語と文化(GW)', professor: '金 容賛', location: 'AN210', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyUIQA0/202654536' },

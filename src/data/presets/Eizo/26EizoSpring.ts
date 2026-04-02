@@ -49,7 +49,7 @@ export const presets: FacultyTimetablePresets = {
         { code: '51147', name: 'Cross-cultural Encounters 1 (GX) § 51148:Cross-cultural Encounters(GX)', professor: '田村 優', location: 'AS368', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxRZQA0/202651147' },
         { code: '52612', name: '（留）日本語Ⅶ（文章表現a）(O6)', professor: '林 和子', location: 'H241', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxH9QAK/202652612' },
         { code: '54578', name: 'エリアスタディ入門(W)', professor: '本多 健一', location: 'AC130', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxffQAC/202654578' },
-        { code: '54683', name: '教養ゼミナール(60)', professor: '荒井 秀典、清家 理、森永 貴彦', location: 'ラーニング・インフィニティ・ホール', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxKPQA0/202654683' }
+        { code: '54683', name: '教養ゼミナール(60)', professor: '荒井 秀典、清家 理、森永 貴彦', location: 'H201', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxKPQA0/202654683' }
       ],
       '3': [
         { code: '12992', name: '（芸）生涯学習概論(A) § 12993:（芸）生涯学習概論(WA)', professor: '國司 隆介', location: '清心館SE009', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RuYpQAK/202612992' },
@@ -202,7 +202,7 @@ export const presets: FacultyTimetablePresets = {
         { code: '51033', name: '映像デザイン論 (W) § 51034:デザイン論(W)', professor: '古川 耕平', location: 'OIC', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyaVQAS/202651033' },
         { code: '52607', name: '（留）日本語Ⅶ（文章表現a）(O1)', professor: 'ベイリー あゆみ', location: 'AN423', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyecQAC/202652607' },
         { code: '52608', name: '（留）日本語Ⅶ（文章表現a）(O2)', professor: '松島 弘枝', location: 'AN427', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxBfQAK/202652608' },
-        { code: '54485', name: 'ピア・サポート論(GV)', professor: '中島 英博', location: 'ラーニング・インフィニティ・ホール', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxlSQAS/202654485' },
+        { code: '54485', name: 'ピア・サポート論(GV)', professor: '中島 英博', location: 'H201', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxlSQAS/202654485' },
         { code: '54501', name: '日本国憲法(GW)', professor: '上出 浩', location: 'C372', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003Rxw6QAC/202654501' },
         { code: '54520', name: '宗教と社会(GV)', professor: '中西 尋子', location: 'AC130', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyGkQAK/202654520' },
         { code: '54566', name: '現代日本の政治(GV)', professor: '徳久 恭子', location: 'C274', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxWxQAK/202654566' },
@@ -351,7 +351,7 @@ export const presets: FacultyTimetablePresets = {
         { code: '50900', name: 'クリエイティブビジネス概論 (W) § 50901:コンテンツマネジメント概論 (W)', professor: '福田 一史', location: 'H202', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RywUQAS/202650900' },
         { code: '50914', name: 'CG実習Ⅰ(W2)', professor: '山崎 由佳', location: 'クリエイティブPC教室1', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxRXQA0/202650914' },
         { code: '50933', name: '広告映像実習 (W) § 50934:広告映像表現実習(W)', professor: '亀井 伸幸', location: 'H243', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003Rxd9QAC/202650933' },
-        { code: '50970', name: 'バーチャルリアリティ(W)', professor: '大島 登志一', location: 'ラーニング・インフィニティ・ホール', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxyRQAS/202650970' },
+        { code: '50970', name: 'バーチャルリアリティ(W)', professor: '大島 登志一', location: 'H201', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxyRQAS/202650970' },
         { code: '51032', name: '映像人類学実習(W)', professor: '鈴木 岳海', location: 'H244', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyZXQA0/202651032' },
         { code: '51046', name: 'グローバル映像社会論 (W) § 51047:日本文化と国際交流(W)', professor: '宋 基燦', location: 'シアター教室', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxNgQAK/202651046' },
         { code: '51153', name: 'Cross-cultural Studies (GV) § 51154:ヴィジョン特殊講義(GV) § 51155:特殊講義（総合）(B9)', professor: '石川 涼子', location: 'AN328', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxUTQA0/202651153' },

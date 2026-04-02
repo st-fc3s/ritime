@@ -112,7 +112,7 @@ export const presets: FacultyTimetablePresets = {
         { code: '52475', name: '専門演習Ⅲ(40)', professor: '猪口 真大', location: 'AC344', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyILQA0/202652475' },
         { code: '52612', name: '（留）日本語Ⅶ（文章表現a）(O6)', professor: '林 和子', location: 'H241', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxH9QAK/202652612' },
         { code: '54578', name: 'エリアスタディ入門(W)', professor: '本多 健一', location: 'AC130', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxffQAC/202654578' },
-        { code: '54683', name: '教養ゼミナール(60)', professor: '荒井 秀典、清家 理、森永 貴彦', location: 'ラーニング・インフィニティ・ホール', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxKPQA0/202654683' }
+        { code: '54683', name: '教養ゼミナール(60)', professor: '荒井 秀典、清家 理、森永 貴彦', location: 'H201', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxKPQA0/202654683' }
       ],
       '3': [
         { code: '11615', name: '（留）日本語Ⅴ（総合）(Z2)', professor: '井元 麻美、岡田 有美子、玉尾 章代', location: '学而館GJ312', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003Rv2XQAS/202611615' },
@@ -271,7 +271,7 @@ export const presets: FacultyTimetablePresets = {
         { code: '52616', name: '（留）日本語Ⅶ（文章表現a）(OE) § 52617:JPNS 3031 日本語Ⅶ（文章表現a） (OE)', professor: '林 和子', location: 'AN520', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxL1QAK/202652616' },
         { code: '54513', name: '心理学入門(BA)', professor: '谷 晋二', location: 'AC330', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003Ry9yQAC/202654513' },
         { code: '54516', name: '論理と思考(GV)', professor: '伊勢 俊彦', location: 'AN210', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyCsQAK/202654516' },
-        { code: '54555', name: '映像メディア実践入門 (GV) § 54556:特殊講義（映像メディア実践入門）(GV)', professor: '辻野 理花', location: 'ラーニング・インフィニティ・ホール', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxPDQA0/202654555' },
+        { code: '54555', name: '映像メディア実践入門 (GV) § 54556:特殊講義（映像メディア実践入門）(GV)', professor: '辻野 理花', location: 'H201', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxPDQA0/202654555' },
         { code: '54561', name: '現代社会と法(GV)', professor: '出口 雅久', location: 'AC130', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxS7QAK/202654561' },
         { code: '54631', name: '地域参加学習入門(GV)', professor: '秋吉 恵', location: 'AN110', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxboQAC/202654631' },
         { code: '54646', name: 'スポーツのサイエンス(GV)', professor: '稲田 愛子', location: 'AC230', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxnQQAS/202654646' }
@@ -369,7 +369,7 @@ export const presets: FacultyTimetablePresets = {
         { code: '52654', name: '（留）日本語初級2（総合）(Z)', professor: '秋山 麻衣耶、堤 美千絵、水野 瑛子', location: 'AN510', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003Rxo3QAC/202652654' },
         { code: '52659', name: '（留）日本語初級2（聴解口頭）(Z2)', professor: '寺尾 美登里', location: 'AS356', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxstQAC/202652659' },
         { code: '52662', name: '（留）日本語初級1（聴解口頭）(Z)', professor: '大久保 加奈子', location: 'AS361', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxvnQAC/202652662' },
-        { code: '54485', name: 'ピア・サポート論(GV)', professor: '中島 英博', location: 'ラーニング・インフィニティ・ホール', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxlSQAS/202654485' },
+        { code: '54485', name: 'ピア・サポート論(GV)', professor: '中島 英博', location: 'H201', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxlSQAS/202654485' },
         { code: '54501', name: '日本国憲法(GW)', professor: '上出 浩', location: 'C372', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003Rxw6QAC/202654501' },
         { code: '54520', name: '宗教と社会(GV)', professor: '中西 尋子', location: 'AC130', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyGkQAK/202654520' },
         { code: '54536', name: '世界の言語と文化(GW)', professor: '金 容賛', location: 'AN210', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyUIQA0/202654536' },
@@ -516,7 +516,7 @@ export const presets: FacultyTimetablePresets = {
         { code: '52120', name: '日本経済論(BB)', professor: '植田 展大', location: 'AN210', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyQ2QAK/202652120' },
         { code: '52132', name: '会計学 (BA) § 52133:会計学(BA)', professor: '松浦 総一', location: 'AC330', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RybeQAC/202652132' },
         { code: '52134', name: '交通システム論(BA)', professor: '近藤 宏一', location: 'AN310', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyccQAC/202652134' },
-        { code: '52313', name: '国際経営戦略論(B)', professor: '永島 正康', location: 'ラーニング・インフィニティ・ホール', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxMuQAK/202652313' },
+        { code: '52313', name: '国際経営戦略論(B)', professor: '永島 正康', location: 'H201', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxMuQAK/202652313' },
         { code: '52597', name: '（留）日本語Ⅷ（アカデミック日本語a）(O3)', professor: '大島 弥生', location: 'AN327', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyYoQAK/202652597' },
         { code: '52603', name: '（留）日本語Ⅷ（キャリア日本語a）(O3) § 52604:JPNS 3022 日本語Ⅷ（キャリア日本語a） (O3)', professor: '山田 千晶', location: 'AS468', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RycgQAC/202652603' },
         { code: '52620', name: '（留）日本語Ⅶ（読解a）(O3)', professor: '大治 道子', location: 'AN415', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxNvQAK/202652620' },

@@ -157,7 +157,7 @@ export const presets: FacultyTimetablePresets = {
         { code: '52601', name: '（留）日本語Ⅷ（キャリア日本語a）(O2) § 52602:JPNS 3022 日本語Ⅷ（キャリア日本語a） (O2)', professor: '増井 奈穂美', location: 'AS357', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RybiQAC/202652601' },
         { code: '52616', name: '（留）日本語Ⅶ（文章表現a）(OE) § 52617:JPNS 3031 日本語Ⅶ（文章表現a） (OE)', professor: '林 和子', location: 'AN520', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxL1QAK/202652616' },
         { code: '54513', name: '心理学入門(BA)', professor: '谷 晋二', location: 'AC330', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003Ry9yQAC/202654513' },
-        { code: '54555', name: '映像メディア実践入門 (GV) § 54556:特殊講義（映像メディア実践入門）(GV)', professor: '辻野 理花', location: 'ラーニング・インフィニティ・ホール', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxPDQA0/202654555' },
+        { code: '54555', name: '映像メディア実践入門 (GV) § 54556:特殊講義（映像メディア実践入門）(GV)', professor: '辻野 理花', location: 'H201', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxPDQA0/202654555' },
         { code: '54631', name: '地域参加学習入門(GV)', professor: '秋吉 恵', location: 'AN110', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxboQAC/202654631' },
         { code: '54646', name: 'スポーツのサイエンス(GV)', professor: '稲田 愛子', location: 'AC230', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxnQQAS/202654646' }
       ],
@@ -177,7 +177,7 @@ export const presets: FacultyTimetablePresets = {
         { code: '50489', name: '映像・CALLで学ぶ朝鮮語1 (B) § 50490:（副）映像・CALLで学ぶ朝鮮語1 (B) § 50491:映像・CALLで学ぶKorean1 (A)', professor: '安 聖民', location: 'AN423', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxnjQAC/202650489' },
         { code: '50492', name: '映像・CALLで学ぶドイツ語1 (B) § 50493:（副）映像・CALLで学ぶドイツ語1 (B) § 50494:映像・CALLで学ぶGerman1 (A)', professor: '大西 光弘', location: 'AN416', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxohQAC/202650492' },
         { code: '51172', name: '政策科学入門(P)', professor: '安藤 悠太、角本 和理、田村 正興、豊田 祐輔、山出 美弥、吉田 友彦', location: 'AC230', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxdBQAS/202651172' },
-        { code: '51177', name: '現代政治理論(P)', professor: '成田 大起', location: 'ラーニング・インフィニティ・ホール', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003Rxi1QAC/202651177' },
+        { code: '51177', name: '現代政治理論(P)', professor: '成田 大起', location: 'H201', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003Rxi1QAC/202651177' },
         { code: '51241', name: '地域環境調査Ⅰ(P)', professor: '藏田 典子', location: 'AS368', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxbGQAS/202651241' },
         { code: '51265', name: '消費者行動論(P)', professor: '舟橋 豊子', location: 'AS257', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxyUQAS/202651265' },
         { code: '51322', name: 'Foundation Course to Policy Science Ⅱ(P)', professor: '島本 奈央', location: 'AS365', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003Ryl9QAC/202651322' },
@@ -220,7 +220,7 @@ export const presets: FacultyTimetablePresets = {
         { code: '52654', name: '（留）日本語初級2（総合）(Z)', professor: '秋山 麻衣耶、堤 美千絵、水野 瑛子', location: 'AS356', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003Rxo3QAC/202652654' },
         { code: '52659', name: '（留）日本語初級2（聴解口頭）(Z2)', professor: '寺尾 美登里', location: 'AS356', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxstQAC/202652659' },
         { code: '52662', name: '（留）日本語初級1（聴解口頭）(Z)', professor: '大久保 加奈子', location: 'AS361', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxvnQAC/202652662' },
-        { code: '54485', name: 'ピア・サポート論(GV)', professor: '中島 英博', location: 'ラーニング・インフィニティ・ホール', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxlSQAS/202654485' },
+        { code: '54485', name: 'ピア・サポート論(GV)', professor: '中島 英博', location: 'H201', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxlSQAS/202654485' },
         { code: '54520', name: '宗教と社会(GV)', professor: '中西 尋子', location: 'AC130', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyGkQAK/202654520' },
         { code: '54536', name: '世界の言語と文化(GW)', professor: '金 容賛', location: 'AN210', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyUIQA0/202654536' },
         { code: '54662', name: 'スポーツ方法実習Ⅰ(D)(22)', professor: '稲田 愛子', location: 'OICアリーナ1', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003Ry4WQAS/202654662' }

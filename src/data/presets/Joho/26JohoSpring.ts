@@ -70,7 +70,7 @@ export const presets: FacultyTimetablePresets ={
         { code: '53410', name: 'オブジェクト指向論(K1)', professor: '來村 徳信', location: 'H324', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003Rx7vQAC/202653410' },
         { code: '53411', name: 'オブジェクト指向論(K2)', professor: '桑原 和宏', location: 'H301', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003Rx8tQAC/202653411' },
         { code: '53458', name: 'Web Information Engineering(G1)', professor: 'GOHOUROU DJEDJE', location: 'H323', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxmFQAS/202653458' },
-        { code: '54683', name: '教養ゼミナール(60)', professor: '荒井 秀典、清家 理、森永 貴彦', location: 'ラーニング・インフィニティ・ホール', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxKPQA0/202654683' }
+        { code: '54683', name: '教養ゼミナール(60)', professor: '荒井 秀典、清家 理、森永 貴彦', location: 'H201', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxKPQA0/202654683' }
       ],
       '3': [
         { code: '17089', name: '教養ゼミナール(3)', professor: 'リム・ボン', location: '志学館SG303', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RwFAQA0/202617089' },
@@ -206,7 +206,7 @@ export const presets: FacultyTimetablePresets ={
         { code: '53324', name: 'Introduction to Information Systems Engineering(G1)', professor: 'VALENTINUS ROBY H.', location: 'H221', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxBmQAK/202653324' },
         { code: '53384', name: 'ソフトウェア仕様化技法(A1)', professor: '大西 淳', location: 'H324', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RwjcQAC/202653384' },
         { code: '54516', name: '論理と思考(GV)', professor: '伊勢 俊彦', location: 'AN210', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyCsQAK/202654516' },
-        { code: '54555', name: '映像メディア実践入門 (GV) § 54556:特殊講義（映像メディア実践入門）(GV)', professor: '辻野 理花', location: 'ラーニング・インフィニティ・ホール', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxPDQA0/202654555' },
+        { code: '54555', name: '映像メディア実践入門 (GV) § 54556:特殊講義（映像メディア実践入門）(GV)', professor: '辻野 理花', location: 'H201', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxPDQA0/202654555' },
         { code: '54561', name: '現代社会と法(GV)', professor: '出口 雅久', location: 'AC130', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxS7QAK/202654561' },
         { code: '54631', name: '地域参加学習入門(GV)', professor: '秋吉 恵', location: 'AN110', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxboQAC/202654631' },
         { code: '54646', name: 'スポーツのサイエンス(GV)', professor: '稲田 愛子', location: 'AC230', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxnQQAS/202654646' }
@@ -214,7 +214,7 @@ export const presets: FacultyTimetablePresets ={
       '4': [
         { code: '17103', name: '教養ゼミナール(17)', professor: '勝村 誠', location: '存心館ZS302', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RwSiQAK/202617103' },
         { code: '53195', name: '英語中級 108(QX)', professor: 'LEASK JAMIE TAYLOR', location: 'H347', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyWyQAK/202653195' },
-        { code: '53363', name: 'プログラミング演習２(G1)', professor: 'VALENTINUS ROBY H.、CALUYA NICKO REGINIO', location: 'ラーニング・インフィニティ・ホール', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxnCQAS/202653363' },
+        { code: '53363', name: 'プログラミング演習２(G1)', professor: 'VALENTINUS ROBY H.、CALUYA NICKO REGINIO', location: 'H201', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxnCQAS/202653363' },
         { code: '53429', name: 'パターン認識(E1)', professor: '山下 洋一', location: 'H301', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxRvQAK/202653429' },
         { code: '53619', name: '情報技術実践１(K1)', professor: '坪 泰宏', location: 'H324', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyBlQAK/202653619' },
         { code: '54625', name: 'Non-verbal Communication(GV)', professor: '谷村 緑', location: 'C373多目的', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxW0QAK/202654625' }
@@ -269,7 +269,7 @@ export const presets: FacultyTimetablePresets ={
         { code: '53444', name: 'PBL 3: Creative Design (G1) § 53445:PBL: Creative Design(G1)', professor: 'SERDUELT UWE IMRE', location: 'H321', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxeVQAS/202653444' },
         { code: '53446', name: 'PBL 3: Creative Design (G2) § 53447:PBL: Creative Design(G2)', professor: 'KOVACS MATE', location: 'H321', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxfTQAS/202653446' },
         { code: '53457', name: 'Image Processing(G1)', professor: 'GONCHARENKO IGOR', location: 'H221', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxlHQAS/202653457' },
-        { code: '54485', name: 'ピア・サポート論(GV)', professor: '中島 英博', location: 'ラーニング・インフィニティ・ホール', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxlSQAS/202654485' },
+        { code: '54485', name: 'ピア・サポート論(GV)', professor: '中島 英博', location: 'H201', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxlSQAS/202654485' },
         { code: '54501', name: '日本国憲法(GW)', professor: '上出 浩', location: 'C372', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003Rxw6QAC/202654501' },
         { code: '54520', name: '宗教と社会(GV)', professor: '中西 尋子', location: 'AC130', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyGkQAK/202654520' },
         { code: '54536', name: '世界の言語と文化(GW)', professor: '金 容賛', location: 'AN210', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyUIQA0/202654536' },
@@ -465,7 +465,7 @@ export const presets: FacultyTimetablePresets ={
         { code: '53290', name: '物理１(K3)', professor: '嶺重 慎', location: 'H301', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RyS9QAK/202653290' },
         { code: '53345', name: '計算機構成論(G1)', professor: 'GONCHARENKO IGOR', location: 'H321', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxVmQAK/202653345' },
         { code: '53348', name: 'Information Science in Action(K1)', professor: 'KHAN IBRAHIM', location: 'H322', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxYgQAK/202653348' },
-        { code: '53436', name: '心理物理学(F1)', professor: '明石 行生、篠田 博之', location: 'ラーニング・インフィニティ・ホール', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxYhQAK/202653436' },
+        { code: '53436', name: '心理物理学(F1)', professor: '明石 行生、篠田 博之', location: 'H201', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxYhQAK/202653436' },
         { code: '54647', name: 'スポーツのサイエンス(GW)', professor: '稲田 愛子', location: 'AC230', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003RxoOQAS/202654647' },
         { code: '54664', name: 'スポーツ方法実習Ⅰ(D)(24)', professor: '舎利弗 学', location: 'OICアリーナ1', syllabusUrl: 'https://syllabus.ritsumei.ac.jp/syllabus/s/r-syllabus/a0ifD000003Ry84QAC/202654664' }
       ],
