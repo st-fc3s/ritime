@@ -30,6 +30,7 @@ export const LINK_PRESETS: LinkCategory[] = [
       { title: 'STUDENT PORTAL', url: 'https://sp.ritsumei.ac.jp/studentportal'},
       { title: 'moodle+R', url: 'https://lms.ritsumei.ac.jp/my/' },
       { title: '立命館大学図書館', url: 'https://library.ritsumei.ac.jp/' },
+      { title: 'RITSUMEIKAN IT SUPPORT', url: 'https://it.support.ritsumei.ac.jp/'}
     ]
   }
 ];
