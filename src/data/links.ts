@@ -26,7 +26,8 @@ export const LINK_PRESETS: LinkCategory[] = [
     name: '学生生活サポート',
     links: [
       { title: 'CAMPUS WEB', url: 'https://cw.ritsumei.ac.jp/campusweb/' },
-      { title: 'manaba+R', url: 'https://manaba.ritsumei.ac.jp/' },
+      { title: 'STUDENT PORTAL', url: 'https://sp.ritsumei.ac.jp/studentportal'},
+      { title: 'moodle+R', url: 'https://lms.ritsumei.ac.jp/my/' },
       { title: '立命館大学図書館', url: 'https://library.ritsumei.ac.jp/' },
     ]
   }
