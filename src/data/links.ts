@@ -8,12 +8,12 @@ export const LINK_PRESETS: LinkCategory[] = [
     name: '立命館大学',
     links: [
       { title: '大学ホームページ', url: 'https://www.ritsumei.ac.jp/' },
-      { title: '情報理工学部', url: 'https://www.ritsumei.ac.jp/ise/' },
       { title: '経営学部', url: 'https://www.ritsumei.ac.jp/ba/' },
       { title: '政策科学部', url: 'https://www.ritsumei.ac.jp/ps/' },
       { title: '総合心理学部', url: 'https://www.ritsumei.ac.jp/psy/' },
       { title: 'グローバル教養学部', url: 'https://www.ritsumei.ac.jp/gla/' },
-      { title: '映像学部', url: 'https://www.ritsumei.ac.jp/im/' },
+      { title: '映像学部', url: 'https://www.ritsumei.ac.jp/cias/' },
+      { title: '情報理工学部', url: 'https://www.ritsumei.ac.jp/ise/' }
     ]
   },
   {
