@@ -658,7 +658,7 @@ useEffect(() => {
                 className="grid gap-1 w-full h-full"
                 style={{ 
                   gridTemplateColumns: '34px repeat(5, 1fr)',
-                  gridTemplateRows: `28px repeat(${maxPeriods}, 1fr)`
+                  gridTemplateRows: `28px repeat(${maxPeriods}, minmax(0, 1fr))`
                 }}
               >
                 {/* Header Row */}
@@ -686,14 +686,15 @@ useEffect(() => {
                         <button
                           key={`${dIdx}-${pIdx}`}
                           onClick={() => handleCellClick(dIdx, pIdx)}
-                          className={`h-full border rounded-md p-0.5 sm:p-1 text-[9px] sm:text-[11px] leading-tight flex flex-col items-center justify-center text-center transition-colors
+                           className={`h-full border rounded-md p-0.5 sm:p-1 text-[9px] sm:text-[11px] leading-tight flex flex-col items-center justify-center text-center transition-colors overflow-hidden
                             ${subject ? `${colorConfig.bg} ${colorConfig.border} ${colorConfig.text}` : 'bg-white border-neutral-200 hover:bg-neutral-100'}`}
                         >
                           {subject ? (
                             <>
-                              <span className="font-bold line-clamp-3">{subject.name}</span>
+                               <span className="font-bold line-clamp-2 break-all">{subject.name}</span>
                               {subject.location && (
-                                <span className="text-[7px] sm:text-[9px] mt-0.5 sm:mt-1 opacity-50 truncate w-full">{subject.location}</span>
+                                /* MODIFIED: Use line-clamp-1 (truncate) and break-all for location */
+                                <span className="text-[7px] sm:text-[9px] mt-0.5 opacity-50 line-clamp-1 w-full break-all">{subject.location}</span>
                               )}
                             </>
                           ) : (
