@@ -1,20 +1,33 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+<div align="center"></div>
 
-# Run and deploy your AI Studio app
+# このアプリについて
+このアプリは立命館大学大阪いばらきキャンパス（OIC）に通学している人向けのウェブアプリケーション（PWA）です。  
+本アプリケーションは、無償にて利用可能です。広告も一切ありません。  
+本アプリケーションにて入力された情報は、一切外部へ送信されず、開発者も確認することができません。オープンソースソフトウェアなので、心配な方は開発コードをご確認ください。  
+コードはオープンソースで公開しているので、自由に改変していただけます。また、作成されたものを自由に公開していただくことが可能です。ただし、公序良俗に反するようなものを作成して共有することを禁止します。  
+初期設定に関しましては、このページの下部に記載しているのでご確認ください。  
+アプリケーションに関しての質問はフォームにて受け付けております。個別でのサポートが必要な場合でもそちらからご連絡ください。リンクはこのページの下部に記載しております。  
+本アプリケーションを使用していて発生したトラブル等に関しましては、開発者は一切の責任を負いかねます。ご理解いただいた上でのご利用をお願いいたします。  
 
-This contains everything you need to run your app locally.
+# アプリへのリンク
+https://ritime.vercel.app/
 
-View your app in AI Studio: https://ai.studio/apps/eb196bed-3956-4c9e-8289-c2211f3455ac
+## アプリの初期設定
 
-## Run Locally
+本アプリはウェブアプリケーション（PWA）なので、ブラウザが使える環境であれば、どのようなOSでも利用していただけます。
 
-**Prerequisites:**  Node.js
+### 現在確認が取れている環境
+Windows 11 25H2 - Google Chrome, Microsoft Edge  
+iPadOS 26 - Safari  
+Android 15 - Google Chrome
 
+1. 上記のリンクをクリックまたはタップして開きます
+2. ホーム画面に追加又はアプリとしてインストールを行います  
+   詳細は各ブラウザのサポートサイトをご確認ください  
+   Google Chrome (Android, Windows, iOS): https://support.google.com/chrome/answer/15085120?hl=ja  
+   Safari (iOS): https://support.apple.com/ja-jp/guide/iphone/iphea86e5236/ios  
+   Safari (macOS): https://support.apple.com/ja-jp/104996  
+3. 設定したアイコンが表示されれば設定完了です
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### サポート要請フォーム
+現在準備中です。
